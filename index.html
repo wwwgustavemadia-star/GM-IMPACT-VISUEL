@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="logo/GM-ImpactVisuel_Monogramme_Noir.svg">
+<title>GM Impact Visuel</title>
+<meta name="description" content="GM Impact Visuel, studio créatif à Kinshasa : design graphique et photographie. Portfolio, grille tarifaire et contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+/* Concept : le viseur. Bandes pleine largeur noir / graphite / blanc studio, un seul accent rouge REC ; chaque section se lit comme un cadre. */
+:root{
+  --noir:#0B0B0C; --graphite:#141416; --graphite-2:#1D1D21; --ligne:#2C2C31;
+  --gris:#8E8E93; --gris-clair:#C2C2C7; --blanc:#F4F4F2; --pur:#FFFFFF;
+  --studio:#EEEEEC; --encre:#0B0B0C; --encre-2:#4A4A50; --ligne-claire:#D9D9D6;
+  --rouge:#E5202E; --rouge-fonce:#C41824;
+  --f:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --max:1200px; --head:64px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 12px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--noir);color:var(--blanc);font-family:var(--f);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--noir)}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.025em;line-height:1.05;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rouge);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:88px}
+@media (min-width:800px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px));padding-block:120px}}
+.meta{font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
+.dot{color:var(--rouge)}
+.band-noir{background:var(--noir);color:var(--blanc)}
+.band-graph{background:var(--graphite);color:var(--blanc)}
+.band-studio{background:var(--studio);color:var(--encre)}
+.band-rouge{background:var(--rouge);color:var(--pur)}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 15px/1 var(--f);text-decoration:none;padding:16px 24px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-rouge{background:var(--rouge);color:var(--pur)}
+.btn-rouge:hover{background:var(--rouge-fonce)}
+.btn-ligne{border-color:currentColor;color:inherit;background:transparent}
+.btn-ligne:hover{background:var(--blanc);color:var(--noir);border-color:var(--blanc)}
+.band-studio .btn-ligne:hover{background:var(--encre);color:var(--pur);border-color:var(--encre)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* En-tête */
+.head{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(11,11,12,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--ligne)}
+.head-in{max-width:var(--max);margin:0 auto;height:var(--head);display:flex;align-items:center;gap:24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:800px){.head-in{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+.brand{display:flex;align-items:center;text-decoration:none;flex:none}
+.brand img{height:34px;width:auto}
+.nav{display:none;gap:4px;margin-left:auto}
+.nav a{font-size:14px;font-weight:500;text-decoration:none;color:var(--gris-clair);padding:8px 12px;border-radius:999px}
+.nav a:hover,.nav a.on{color:var(--blanc)}
+.nav a.on{background:var(--graphite-2)}
+.head .btn{padding:11px 18px;font-size:14px}
+.head-cta{display:none}
+.menu-btn{margin-left:auto;appearance:none;background:transparent;border:1px solid var(--ligne);color:var(--blanc);border-radius:999px;padding:9px 14px;font:500 14px/1 var(--f);cursor:pointer;display:flex;align-items:center;gap:8px}
+.menu-btn span{display:block;width:16px;height:1.5px;background:currentColor;box-shadow:0 5px 0 currentColor,0 -5px 0 currentColor}
+.panel{border-top:1px solid var(--ligne);background:var(--noir)}
+.panel nav{display:grid;padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
+.panel a{padding:14px 4px;text-decoration:none;font-size:17px;font-weight:500;border-bottom:1px solid var(--ligne)}
+.panel .btn{margin-top:16px;justify-content:center}
+@media (min-width:1120px){.nav{display:flex}.head-cta{display:inline-flex}.menu-btn{display:none}.panel{display:none!important}}
+
+/* Hero */
+.hero .wrap{display:grid;gap:56px;align-items:center;padding-block:56px 88px}
+@media (min-width:900px){.hero .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);padding-block:80px 120px}}
+.rec{display:inline-flex;align-items:center;gap:8px;color:var(--gris-clair)}
+.rec i{width:9px;height:9px;border-radius:50%;background:var(--rouge);animation:blink 1.6s steps(1) infinite}
+@keyframes blink{50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){.rec i{animation:none}}
+.hero h1{font-size:clamp(44px,7.2vw,100px);letter-spacing:-.045em;line-height:.98;margin-top:24px}
+.hero .lead{font-size:clamp(17px,1.9vw,20px);font-weight:300;line-height:1.6;color:var(--gris-clair);max-width:52ch;margin-top:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.viewer{position:relative;margin:0;justify-self:center;width:min(100%,480px)}
+.viewer .frame{position:relative;aspect-ratio:4/5;display:grid;place-items:end center;overflow:hidden}
+.viewer .circle{position:absolute;left:8%;right:8%;top:16%;aspect-ratio:1;border-radius:50%;background:var(--rouge)}
+.viewer .cut{position:absolute;inset:0;clip-path:inset(0 0 0 0)}
+.viewer img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:96%;width:auto;max-width:none}
+.vf{position:absolute;pointer-events:none}
+.vf i{position:absolute;width:var(--l,30px);height:var(--l,30px);border:0 solid var(--c,var(--gris-clair))}
+.vf i:nth-child(1){top:0;left:0;border-top-width:2px;border-left-width:2px}
+.vf i:nth-child(2){top:0;right:0;border-top-width:2px;border-right-width:2px}
+.vf i:nth-child(3){bottom:0;left:0;border-bottom-width:2px;border-left-width:2px}
+.vf i:nth-child(4){bottom:0;right:0;border-bottom-width:2px;border-right-width:2px}
+.viewer .vf{inset:0}
+.viewer figcaption{margin-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--gris)}
+
+/* Engagements */
+.promise .wrap{padding-block:40px;display:grid;gap:24px}
+@media (min-width:700px){.promise .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1050px){.promise .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.promise .wrap>div{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
+.promise svg{width:22px;height:22px;color:var(--rouge);margin-top:2px}
+.promise b{display:block;font-weight:600;font-size:15.5px}
+.promise span{font-size:14px;color:var(--gris-clair)}
+
+/* Titres de section */
+.sec-head{display:grid;gap:18px;margin-bottom:56px;max-width:760px}
+.sec-head .meta{color:var(--gris)}
+.band-studio .sec-head .meta{color:var(--encre-2)}
+.sec-head h2{font-size:clamp(34px,5.2vw,64px);letter-spacing:-.04em}
+.sec-head p{font-size:clamp(16px,1.8vw,19px);font-weight:300;color:var(--gris-clair);max-width:58ch}
+.band-studio .sec-head p{color:var(--encre-2)}
+
+/* Services */
+.services{display:grid;gap:1px;background:var(--ligne);border:1px solid var(--ligne);border-radius:6px;overflow:hidden}
+@media (min-width:760px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.svc{background:var(--noir);padding:36px 32px;display:grid;gap:16px;align-content:start;min-width:0}
+.svc svg{width:34px;height:34px;color:var(--blanc)}
+.svc h3{font-size:24px;letter-spacing:-.02em}
+.svc p{color:var(--gris-clair);font-size:15.5px;max-width:44ch}
+.svc ul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-size:13.5px;border:1px solid var(--ligne);border-radius:999px;padding:5px 12px;color:var(--gris-clair)}
+
+
+/* Services : deux cœurs de métier */
+.core{display:grid;gap:16px}
+@media (min-width:860px){.core{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.core-card{position:relative;border:1px solid var(--ligne);border-radius:6px;padding:36px 32px;display:flex;flex-direction:column;gap:18px;min-width:0;background:var(--graphite);overflow:hidden}
+.core-card.photo{background:linear-gradient(180deg,rgba(11,11,12,.55),rgba(11,11,12,.92) 60%),url(img/lens.jpg) right center/cover;border-color:var(--ligne)}
+.core-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.core-head svg{width:38px;height:38px}
+.core-head .meta{color:var(--rouge)}
+.core-card h3{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.035em}
+.core-card>p{color:var(--gris-clair);font-size:16px;max-width:46ch}
+.core-list{list-style:none;margin:0;padding:0;display:grid}
+.core-list li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:13px 0;border-bottom:1px solid var(--ligne);font-size:15.5px}
+.core-list li:first-child{border-top:1px solid var(--ligne)}
+.core-list b{font-weight:600}
+.core-list span{color:var(--gris-clair);text-align:right;font-variant-numeric:tabular-nums}
+.core-card .btn{align-self:flex-start;margin-top:auto}
+.also{margin-top:40px;display:grid;gap:16px}
+.also>.meta{color:var(--gris)}
+.also-grid{display:grid;gap:16px}
+@media (min-width:760px){.also-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.also-grid article{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start;border-top:1px solid var(--ligne);padding-top:18px}
+.also-grid svg{width:28px;height:28px;color:var(--gris-clair)}
+.also-grid h3{font-size:18px;letter-spacing:-.01em;line-height:1.3}
+.also-grid p{font-size:14.5px;color:var(--gris-clair);margin-top:4px}
+
+/* Tarifs design */
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:4px;border:1px solid var(--ligne);border-radius:999px;width:max-content;max-width:100%;margin-bottom:28px}
+.tabs::-webkit-scrollbar{display:none}
+@media (max-width:640px){.tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;border-radius:18px}.tabs button{white-space:normal;padding:12px 10px}}
+.tabs button{appearance:none;border:0;background:transparent;color:var(--gris-clair);font:500 14.5px/1 var(--f);padding:12px 18px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.tabs button:hover{color:var(--blanc)}
+.tabs button[aria-selected="true"]{background:var(--blanc);color:var(--noir)}
+.tlead{color:var(--gris-clair);font-size:16px;margin-bottom:24px;max-width:62ch}
+.tiers{display:grid;gap:16px;align-items:stretch}
+@media (min-width:900px){.tiers.n3{grid-template-columns:repeat(3,minmax(0,1fr))}.tiers.n2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tier{position:relative;background:var(--noir);border:1px solid var(--ligne);border-radius:6px;padding:30px 26px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.tier.best{border-color:var(--rouge);box-shadow:0 0 0 1px var(--rouge) inset}
+.badge{position:absolute;top:-12px;left:26px;background:var(--rouge);color:var(--pur);font-size:11.5px;font-weight:600;letter-spacing:.06em;padding:5px 12px;border-radius:999px}
+.tier h4{margin:0;font-size:18px;font-weight:600;letter-spacing:-.01em}
+.price{font-size:clamp(38px,4.4vw,52px);font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.price small{font-size:15px;font-weight:500;letter-spacing:0;color:var(--gris-clair);margin-right:4px}
+.tier-desc{font-size:14.5px;color:var(--gris-clair)}
+.specs{margin:0;display:grid;border-top:1px solid var(--ligne)}
+.specs div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--ligne);font-size:14px}
+.specs dt{color:var(--gris)}
+.specs dd{margin:0;text-align:right;font-weight:500}
+.incl{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:14.5px}
+.incl li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start}
+.incl svg{width:16px;height:16px;margin-top:3px}
+.incl .yes svg{color:var(--rouge)}
+.incl .no{color:var(--gris)}
+.incl .no span{text-decoration:line-through;text-decoration-color:rgba(142,142,147,.6)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tier .btn{margin-top:auto;justify-content:center}
+.conds{margin-top:40px;display:grid;gap:20px}
+@media (min-width:700px){.conds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1050px){.conds{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.conds div{border-top:2px solid var(--ligne);padding-top:16px;display:grid;gap:8px;align-content:start}
+.conds .meta{color:var(--gris)}
+.conds p{font-size:14.5px;color:var(--gris-clair)}
+.tnote{margin-top:24px;font-size:13px;color:var(--gris)}
+
+/* Manifeste */
+.manif .wrap{display:grid;gap:28px;position:relative;overflow:hidden;padding-block:96px}
+.manif .meta{color:var(--pur)}
+.manif h2{font-size:clamp(48px,10vw,140px);letter-spacing:-.05em;line-height:.95;position:relative}
+.manif p{font-size:clamp(18px,2.4vw,26px);font-weight:300;max-width:34ch;position:relative}
+.manif .ghost{position:absolute;right:-6%;top:50%;transform:translateY(-50%);width:min(560px,70vw);opacity:.13;pointer-events:none}
+
+/* Pour qui */
+.who{display:grid;gap:28px}
+@media (min-width:700px){.who{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1050px){.who{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.who div{border-top:2px solid var(--ligne);padding-top:22px;display:grid;gap:10px;align-content:start;min-width:0}
+.who div:first-child{border-top-color:var(--rouge)}
+.who h3{font-size:20px;letter-spacing:-.01em;line-height:1.2}
+.who p{font-size:15px;color:var(--gris-clair)}
+.who em{font-style:normal;font-size:14px;color:var(--blanc)}
+
+/* Offres */
+.packs{display:grid;gap:16px}
+@media (min-width:700px){.packs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.packs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.pack{background:var(--pur);border:1px solid var(--ligne-claire);border-radius:6px;padding:28px 24px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.pack .meta{color:var(--encre-2);font-size:11px}
+.pack h3{font-size:22px;letter-spacing:-.02em;line-height:1.15}
+.pack ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px;color:var(--encre-2)}
+.pack li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:10px}
+.pack li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rouge);margin-top:9px}
+.pack .btn{margin-top:auto;justify-content:center;width:100%}
+.pack .btn-ligne{color:var(--encre)}
+.pack.feat{background:var(--noir);border-color:var(--noir);color:var(--blanc)}
+.pack.feat .meta{color:var(--rouge)}
+.pack.feat ul{color:var(--gris-clair)}
+.pack.feat .btn-ligne{color:var(--blanc)}
+.pack.feat .btn-ligne:hover{background:var(--blanc);color:var(--noir);border-color:var(--blanc)}
+.carte{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--ligne-claire);padding-top:24px;color:var(--encre-2);font-size:15px}
+.carte b{color:var(--encre);font-weight:600}
+
+/* Processus */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:28px;counter-reset:s}
+@media (min-width:760px){.steps{grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}}
+.steps li{counter-increment:s;border-top:2px solid var(--ligne);padding-top:20px;display:grid;gap:8px;align-content:start;min-width:0}
+.steps li:first-child{border-top-color:var(--rouge)}
+.steps li::before{content:counter(s,decimal-leading-zero);font-size:32px;font-weight:700;letter-spacing:-.03em;color:var(--gris)}
+.steps li:first-child::before{color:var(--rouge)}
+.steps b{font-size:18px;font-weight:600}
+.steps span{font-size:14.5px;color:var(--gris-clair)}
+
+/* Studio */
+.studio-grid{display:grid;gap:20px}
+@media (min-width:900px){.studio-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:stretch}}
+.shot{position:relative;margin:0;border-radius:6px;overflow:hidden;background:var(--graphite-2)}
+.shot img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.shot figcaption{position:absolute;left:12px;bottom:12px;background:rgba(11,11,12,.8);color:var(--gris-clair);padding:6px 10px;border-radius:4px}
+.studio-side{display:grid;gap:20px;align-content:start}
+.studio-side .shot img{aspect-ratio:735/446}
+.feat-list{list-style:none;margin:0;padding:0;display:grid}
+.feat-list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:16px 0;border-bottom:1px solid var(--ligne);font-size:15.5px}
+.feat-list li:first-child{border-top:1px solid var(--ligne)}
+.feat-list span{color:var(--gris)}
+
+/* À propos */
+.about{display:grid;gap:48px}
+@media (min-width:900px){.about{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}}
+.about blockquote{margin:0;font-size:clamp(26px,3.6vw,42px);font-weight:600;letter-spacing:-.03em;line-height:1.15;text-wrap:balance}
+.about .sig{display:flex;align-items:center;gap:14px;margin-top:28px}
+.about .sig img{width:52px}
+.about .sig b{display:block;font-weight:600}
+.about .sig span{font-size:14px;color:var(--gris)}
+.about .cols{display:grid;gap:16px}
+@media (min-width:600px){.about .cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.box{border:1px solid var(--ligne);border-radius:6px;padding:26px;display:grid;gap:10px;align-content:start;min-width:0}
+.box .meta{color:var(--gris)}
+.box h3{font-size:19px;line-height:1.25;letter-spacing:-.01em}
+.box p{font-size:15px;color:var(--gris-clair)}
+.values{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.values span{border:1px solid var(--ligne);border-radius:999px;padding:6px 14px;font-size:14px}
+
+/* Contact */
+.contact{display:grid;gap:40px}
+@media (min-width:900px){.contact{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.lines{display:grid;gap:0;border-top:1px solid var(--ligne-claire)}
+.line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:18px 0;border-bottom:1px solid var(--ligne-claire)}
+.line .meta{color:var(--encre-2);font-size:10.5px;display:block;margin-bottom:2px}
+.line b{overflow-wrap:anywhere;font-size:clamp(17px,2.2vw,22px);font-weight:600;font-variant-numeric:tabular-nums;user-select:all}
+.line .acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:end}
+.mini{appearance:none;border:1px solid var(--encre);background:transparent;color:var(--encre);font:500 12.5px/1 var(--f);padding:9px 12px;border-radius:999px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.mini:hover{background:var(--encre);color:var(--pur)}
+.form{background:var(--pur);border:1px solid var(--ligne-claire);border-radius:6px;padding:28px;display:grid;gap:18px;min-width:0}
+.form h3{font-size:22px;letter-spacing:-.02em}
+.row{display:grid;gap:18px}
+@media (min-width:600px){.row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-size:13px;font-weight:500;color:var(--encre-2)}
+.field input,.field select,.field textarea{font:400 16px/1.4 var(--f);color:var(--encre);background:var(--studio);border:1px solid var(--ligne-claire);border-radius:6px;padding:12px 14px;width:100%;min-width:0;color-scheme:light}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--rouge);outline-offset:1px;border-color:transparent}
+.form .note{font-size:13px;color:var(--encre-2)}
+.form .btn{justify-content:center}
+
+/* Pied */
+.foot .wrap{padding-block:56px 40px;display:grid;gap:32px}
+.foot-top{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+.foot-top img{height:44px;width:auto}
+.foot-top p{font-size:15px;color:var(--gris-clair)}
+.foot-nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+.foot-nav a{font-size:14px;color:var(--gris-clair);text-decoration:none}
+.foot-nav a:hover{color:var(--blanc)}
+.foot-bot{border-top:1px solid var(--ligne);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:var(--gris);font-size:13px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--blanc);color:var(--noir);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:500;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:50}
+
+[hidden]{display:none!important}
+/* Pages */
+.page:focus,h1[tabindex="-1"]:focus{outline:none}
+.phero .wrap{padding-block:64px 48px;display:grid;gap:18px}
+@media (min-width:800px){.phero .wrap{padding-block:88px 64px}}
+.crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--gris)}
+.crumb a{text-decoration:none;color:var(--gris-clair)}
+.crumb a:hover{color:var(--blanc)}
+.phero h1{font-size:clamp(40px,6.4vw,88px);letter-spacing:-.045em;line-height:1}
+.phero h1:focus{outline:none}
+.phero p{font-size:clamp(16px,1.9vw,20px);font-weight:300;color:var(--gris-clair);max-width:60ch}
+.phero .ctas{margin-top:12px}
+.nextp .wrap{padding-block:48px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.nextp a.big{display:inline-flex;align-items:center;gap:14px;text-decoration:none;font-size:clamp(26px,3.6vw,44px);font-weight:700;letter-spacing:-.03em}
+.nextp a.big svg{width:clamp(26px,3vw,38px);height:clamp(26px,3vw,38px);color:var(--rouge);transition:transform .2s}
+.nextp a.big:hover svg{transform:translateX(6px)}
+.nextp .meta{color:var(--gris)}
+.nav a[aria-current="page"],.panel a[aria-current="page"]{color:var(--blanc)}
+.nav a[aria-current="page"]{background:var(--graphite-2)}
+.panel a[aria-current="page"]{color:var(--rouge)}
+.steps.n4{counter-reset:s}
+@media (min-width:760px){.steps.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* Accueil : réalisations */
+.hl-grid{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:900px){.hl-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+.hl{position:relative;display:block;border-radius:6px;overflow:hidden;text-decoration:none;background:var(--graphite-2);aspect-ratio:4/5}
+.hl img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hl:hover img{transform:scale(1.04)}
+.hl>span{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 14px;background:linear-gradient(180deg,rgba(11,11,12,0),rgba(11,11,12,.88));display:grid;gap:2px}
+.hl span .meta{color:var(--gris-clair)}
+.hl span b{font-size:15px;font-weight:600;line-height:1.3}
+.sec-foot{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.tease{display:grid;gap:12px}
+@media (min-width:640px){.tease{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1050px){.tease{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.tease a{display:grid;gap:6px;align-content:start;text-decoration:none;border:1px solid var(--ligne);border-radius:6px;padding:22px 20px;background:var(--noir);transition:border-color .2s}
+.tease a:hover{border-color:var(--rouge)}
+.tease .meta{color:var(--gris)}
+.tease b{font-size:19px;font-weight:600;letter-spacing:-.01em}
+.tease em{font-style:normal;font-size:30px;font-weight:700;letter-spacing:-.03em}
+.tease em small{font-size:14px;font-weight:500;color:var(--gris-clair);letter-spacing:0;margin-right:4px}
+.tease i{font-style:normal;font-size:13.5px;color:var(--rouge);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:1px solid var(--ligne);border-radius:999px;padding:10px 18px;font-size:15px;font-weight:500}
+.cta-band .wrap{display:grid;gap:24px;padding-block:80px}
+@media (min-width:900px){.cta-band .wrap{grid-template-columns:minmax(0,1fr) auto;align-items:end}}
+.cta-band h2{font-size:clamp(36px,5.6vw,72px);letter-spacing:-.045em}
+.cta-band p{font-size:18px;font-weight:300;margin-top:12px;max-width:48ch}
+.cta-band .btn-blanc{background:var(--pur);color:var(--noir)}
+.cta-band .btn-blanc:hover{background:var(--noir);color:var(--pur)}
+
+/* Portfolio */
+.reel{display:grid;gap:24px;margin-bottom:56px}
+@media (min-width:900px){.reel{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center}}
+.reel video{width:100%;height:auto;aspect-ratio:16/9;border-radius:6px;background:#000;display:block}
+.reel h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;margin-top:10px}
+.reel p{color:var(--gris-clair);margin-top:12px;max-width:44ch}
+.reel .meta{color:var(--rouge)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{appearance:none;border:1px solid var(--ligne);background:transparent;color:var(--gris-clair);font:500 14.5px/1 var(--f);padding:12px 18px;border-radius:999px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.filters button span{font-size:12px;color:var(--gris)}
+.filters button:hover{color:var(--blanc);border-color:var(--gris)}
+.filters button[aria-pressed="true"]{background:var(--blanc);color:var(--noir);border-color:var(--blanc)}
+.filters button[aria-pressed="true"] span{color:var(--encre-2)}
+.pf-grid{columns:2 160px;column-gap:12px}
+@media (min-width:700px){.pf-grid{columns:3 220px;column-gap:16px}}
+@media (min-width:1100px){.pf-grid{columns:4 220px}}
+.pf-item{break-inside:avoid;margin:0 0 16px;display:grid;gap:8px}
+.pf-open{appearance:none;border:0;padding:0;margin:0;background:var(--graphite-2);border-radius:6px;overflow:hidden;cursor:zoom-in;display:block;width:100%}
+.pf-open img{width:100%;height:auto;transition:transform .5s,opacity .3s}
+.pf-open:hover img{transform:scale(1.03)}
+.pf-item.logo .pf-open{background:var(--graphite-2);padding:28px 22px;aspect-ratio:4/3;display:grid;place-items:center}
+.pf-item.logo .pf-open img{width:auto;max-width:100%;max-height:150px;object-fit:contain}
+.pf-item.logo.clair .pf-open{background:var(--pur)}
+.pf-item figcaption{font-size:13.5px;line-height:1.4;color:var(--gris-clair);display:grid;gap:2px}
+.pf-item figcaption .meta{color:var(--gris);font-size:10.5px}
+.lb{border:0;padding:0;margin:0;max-width:none;max-height:none;width:100%;height:100%;background:rgba(11,11,12,.97);color:var(--blanc)}
+.lb::backdrop{background:rgba(0,0,0,.6)}
+.lb-in{position:relative;height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:calc(12px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--gris)}
+.lb-fig{margin:0;display:grid;place-items:center;min-height:0;padding:12px 0}
+.lb-fig img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:4px}
+.lb-bot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.lb-bot p{font-size:15px;color:var(--gris-clair)}
+.lb-btns{display:flex;gap:8px}
+.lb button{appearance:none;border:1px solid var(--ligne);background:var(--graphite);color:var(--blanc);border-radius:999px;min-width:48px;height:48px;padding:0 16px;font:500 14px/1 var(--f);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.lb button:hover{border-color:var(--blanc)}
+.lb button svg{width:18px;height:18px}
+
+/* Tarifs : autres conceptions, options */
+.others{display:grid;gap:36px}
+@media (min-width:1000px){.others{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 40px}}
+.og h4{margin:0 0 10px;color:var(--rouge);font-size:12px}
+.olist{list-style:none;margin:0;padding:0;border-top:1px solid var(--ligne)}
+.olist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--ligne)}
+.olist .on{display:grid;gap:2px;min-width:0}
+.olist .on b{font-weight:600;font-size:15.5px}
+.olist .on span{font-size:13.5px;color:var(--gris)}
+.olist .op{font-size:20px;font-weight:700;letter-spacing:-.02em;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.olist .op small{font-size:12.5px;font-weight:500;color:var(--gris-clair);letter-spacing:0}
+.olist .od{font-size:13px;color:var(--gris-clair)}
+.olist .ob{justify-self:end}
+.mini-w{display:inline-flex;align-items:center;gap:6px;font:500 12.5px/1 var(--f);text-decoration:none;color:var(--blanc);border:1px solid var(--ligne);border-radius:999px;padding:9px 12px;white-space:nowrap}
+.mini-w:hover{border-color:var(--rouge);color:var(--pur);background:var(--rouge)}
+.mini-w svg{width:14px;height:14px}
+.opts{display:grid;gap:12px;margin-top:48px}
+@media (min-width:640px){.opts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1050px){.opts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.opts div{border:1px solid var(--ligne);border-radius:6px;padding:20px;display:grid;gap:4px;align-content:start}
+.opts .meta{color:var(--gris)}
+.opts b{font-size:28px;font-weight:700;letter-spacing:-.03em}
+.opts span{font-size:14px;color:var(--gris-clair)}
+.blk-title{margin:64px 0 24px;display:grid;gap:10px}
+.blk-title .meta{color:var(--gris)}
+.blk-title h3{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.03em}
+@media (min-width:1050px){.conds.n6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* À propos */
+.founder{display:grid;gap:48px;align-items:center}
+@media (min-width:900px){.founder{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.founder h2{font-size:clamp(32px,4.4vw,56px);letter-spacing:-.04em}
+.founder .txt{display:grid;gap:18px}
+.founder .txt p{color:var(--gris-clair);font-size:17px;max-width:56ch}
+.founder .txt .meta{color:var(--rouge)}
+.skills{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:0;max-width:460px;border-top:1px solid var(--ligne)}
+.skills li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--ligne);font-size:15px;font-weight:500}
+.skills i{display:inline-flex;gap:6px}
+.skills i b{width:11px;height:11px;border-radius:50%;background:var(--ligne)}
+.skills i b.f{background:var(--rouge)}
+.quote-band .wrap{padding-block:88px;display:grid;gap:24px;max-width:1000px}
+.quote-band q{quotes:none;font-size:clamp(24px,3.4vw,40px);font-weight:500;letter-spacing:-.025em;line-height:1.25}
+.quote-band q em{font-style:normal;color:var(--rouge)}
+.quote-band .meta{color:var(--encre-2)}
+</style>
+
+</head>
+<body>
+<header class="head">
+  <div class="head-in">
+    <a class="brand" href="#accueil" aria-label="GM Impact Visuel, accueil"><img src="logo/GM-ImpactVisuel_Logo-Horizontal_Blanc.svg" alt="GM Impact Visuel"></a>
+    <nav class="nav" aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#tarifs">Tarifs</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></nav>
+    <a class="btn btn-rouge head-cta" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener">Demander un devis</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="panel"><span></span>Menu</button>
+  </div>
+  <div class="panel" id="panel" hidden>
+    <nav aria-label="Navigation mobile"><a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#tarifs">Tarifs</a><a href="#apropos">À propos</a><a href="#contact">Contact</a><a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener">Demander un devis</a></nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="page" id="accueil" data-page data-title="GM Impact Visuel · Design graphique et photographie à Kinshasa">
+<section class="band-noir hero" aria-label="Présentation">
+  <div class="wrap">
+    <div>
+      <div class="meta"><span class="rec"><i></i>REC</span> &nbsp;·&nbsp; Studio créatif à Kinshasa</div>
+      <h1 tabindex="-1">Là où les idées ont un impact<span class="dot">.</span></h1>
+      <p class="lead">Design graphique et photographie professionnelle à Kinshasa. Logos, identités visuelles, affiches, packaging, portraits, événements et mariages : nous créons les images qui font connaître votre marque.</p>
+      <div class="ctas">
+        <a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Demander un devis</a>
+        <a class="btn btn-ligne" href="#portfolio">Voir le portfolio</a>
+        <a class="btn btn-ligne" href="#tarifs">Voir les tarifs</a>
+      </div>
+    </div>
+    <figure class="viewer">
+      <div class="frame">
+        <div class="circle" aria-hidden="true"></div>
+        <img src="img/portrait.webp" alt="Gustave Madia, fondateur de GM Impact Visuel, en costume noir dans un fauteuil">
+        <div class="vf"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <figcaption class="meta"><span>GM—001</span><span>Gustave Madia · Fondateur</span></figcaption>
+    </figure>
+  </div>
+</section>
+<section class="band-graph promise" aria-label="Nos engagements">
+  <div class="wrap">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p><b>Devis gratuit sous 48 h</b><span>Une proposition claire, sans surprise.</span></p></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg><p><b>Design et photo au cœur</b><span>Avec la vidéo et le digital en complément.</span></p></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg><p><b>Galerie privée en ligne</b><span>Vos fichiers en haute définition, prêts à partager.</span></p></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><p><b>Basés à Kinshasa</b><span>Déplacements possibles partout en RDC.</span></p></div>
+  </div>
+</section>
+<section class="band-noir" aria-labelledby="h-svc-home"><div class="wrap"><div class="sec-head"><span class="meta">Nos services</span><h2 id="h-svc-home">Design graphique et photographie<span class="dot">.</span></h2><p>Nos deux cœurs de métier. La vidéo et le marketing digital complètent l’offre pour faire vivre vos images.</p></div>
+<div class="core">
+      <article class="core-card">
+        <div class="core-head"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="7"/><rect x="14" y="14" width="13" height="13"/></svg><span class="meta">Cœur de métier</span></div>
+        <h3>Design graphique</h3>
+        <p>Logos, identités visuelles, affiches, flyers et packaging. Des visuels qui donnent confiance et font vendre.</p>
+        <ul class="core-list">
+          <li><b>Logo</b><span>dès 100 $</span></li>
+          <li><b>Identité visuelle</b><span>dès 700 $</span></li>
+          <li><b>Affiches et flyers</b><span>dès 30 $</span></li>
+          <li><b>Packaging produit</b><span>dès 100 $</span></li>
+        </ul>
+        <a class="btn btn-rouge" href="#tarifs">Voir les tarifs design</a>
+      </article>
+      <article class="core-card photo">
+        <div class="core-head"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10h5l2-3h10l2 3h5v15H4z"/><circle cx="16" cy="17" r="5"/></svg><span class="meta">Cœur de métier</span></div>
+        <h3>Photographie</h3>
+        <p>Portraits, événements, mariages et produits. Des images nettes et vivantes, retouchées avec soin et livrées en galerie privée.</p>
+        <ul class="core-list">
+          <li><b>Portrait professionnel</b><span>CV, LinkedIn, équipe</span></li>
+          <li><b>Événements</b><span>Conférences, fêtes, lancements</span></li>
+          <li><b>Mariages</b><span>Cérémonie et soirée</span></li>
+          <li><b>Produits et publicité</b><span>Sur fond studio</span></li>
+        </ul>
+        <a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance%20photo." target="_blank" rel="noopener">Réserver une séance photo</a>
+      </article>
+    </div>
+    <div class="also">
+      <span class="meta">En complément</span>
+      <div class="also-grid">
+        <article><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="8" width="19" height="16" rx="1"/><path d="M22 14l7-4v12l-7-4z"/></svg><div><h3>Production vidéo</h3><p>Reels, clips promotionnels et musicaux, captation d’événements, vidéos institutionnelles.</p></div></article>
+        <article><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 26V16M12 26V10M19 26V14M26 26V6"/></svg><div><h3>Marketing digital</h3><p>Gestion des réseaux sociaux, création de contenu, stratégie et campagnes publicitaires.</p></div></article>
+      </div>
+    </div>
+  
+<div class="sec-foot"><a class="btn btn-ligne" href="#services">Tous nos services</a></div></div></section>
+<section class="band-graph" aria-labelledby="h-hl"><div class="wrap"><div class="sec-head"><span class="meta">Portfolio</span><h2 id="h-hl">Réalisations récentes<span class="dot">.</span></h2><p>Affiches pour les églises et les événements de Kinshasa, logos, et photographie de mariage.</p></div><div class="hl-grid"><a class="hl" href="#portfolio"><img src="img/pf/p14_t.jpg" alt="" loading="lazy" decoding="async"><span><span class="meta">Photographie</span><b>Mariage · Front contre front</b></span></a><a class="hl" href="#portfolio"><img src="img/pf/kin_1.jpg" alt="" loading="lazy" decoding="async"><span><span class="meta">Design graphique</span><b>Hatima Prayer Kinshasa 2026</b></span></a><a class="hl" href="#portfolio"><img src="img/pf/p11_t.jpg" alt="" loading="lazy" decoding="async"><span><span class="meta">Photographie</span><b>Mariage · Le regard</b></span></a><a class="hl" href="#portfolio"><img src="img/pf/moi_1.jpg" alt="" loading="lazy" decoding="async"><span><span class="meta">Design graphique</span><b>Église La Dernière Moisson</b></span></a><a class="hl" href="#portfolio"><img src="img/pf/p03_t.jpg" alt="" loading="lazy" decoding="async"><span><span class="meta">Photographie</span><b>Mariage · Lunettes noires</b></span></a><a class="hl" href="#portfolio"><img src="img/pf/pen_1.jpg" alt="" loading="lazy" decoding="async"><span><span class="meta">Design graphique</span><b>Le bruit de la Pentecôte 2026</b></span></a></div><div class="sec-foot"><a class="btn btn-rouge" href="#portfolio">Voir tout le portfolio</a></div></div></section>
+<section class="band-noir" aria-labelledby="h-tease"><div class="wrap"><div class="sec-head"><span class="meta">Tarifs</span><h2 id="h-tease">Des prix clairs, fixés à l’avance<span class="dot">.</span></h2><p>Choisissez une formule ou demandez un devis personnalisé. Tarifs en dollars américains.</p></div><div class="tease"><a href="#panel-logo"><span class="meta">Design graphique</span><b>Logo</b><em><small>dès</small>100 $</em><i>Voir le détail →</i></a><a href="#panel-identite"><span class="meta">Design graphique</span><b>Identité visuelle</b><em><small>dès</small>700 $</em><i>Voir le détail →</i></a><a href="#panel-affiches"><span class="meta">Design graphique</span><b>Affiches et flyers</b><em><small>dès</small>30 $</em><i>Voir le détail →</i></a><a href="#panel-packaging"><span class="meta">Design graphique</span><b>Packaging</b><em><small>dès</small>100 $</em><i>Voir le détail →</i></a><a href="#panel-autres"><span class="meta">Design graphique</span><b>Autres conceptions</b><em><small>dès</small>15 $</em><i>Voir le détail →</i></a></div><div class="sec-foot"><a class="btn btn-rouge" href="#tarifs">Voir la grille tarifaire</a></div></div></section>
+<section class="band-rouge manif" aria-label="Notre manifeste">
+  <div class="wrap">
+    <img class="ghost" src="logo/GM-ImpactVisuel_Monogramme_Blanc.svg" alt="">
+    <span class="meta">Notre manifeste</span>
+    <h2>Osez rêver mieux.</h2>
+    <p>Une image qui fait vibrer. Un design qui fait rêver. Une émotion éternelle.</p>
+  </div>
+</section>
+<section class="band-graph" aria-labelledby="h-cli"><div class="wrap"><div class="sec-head"><span class="meta">Ils nous ont fait confiance</span><h2 id="h-cli">Églises, événements et marques<span class="dot">.</span></h2></div><div class="chips"><span>Hatima Prayer</span><span>Église La Dernière Moisson</span><span>Église Porte des Brebis</span><span>Église La Foi Triomphante</span><span>La Compassion</span><span>Niya</span><span>Shema Ekklesia</span><span>Asiel Picture</span></div></div></section>
+<section class="band-rouge cta-band" aria-label="Demander un devis"><div class="wrap"><div><h2>Parlons de votre projet.</h2><p>Écrivez-nous sur WhatsApp : devis gratuit sous 48 h.</p></div><div class="ctas" style="margin-top:0"><a class="btn btn-blanc" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Demander un devis</a><a class="btn btn-ligne" href="#contact">Nous contacter</a></div></div></section>
+</div>
+
+<div class="page" id="services" data-page data-title="Services · GM Impact Visuel" hidden>
+<section class="band-graph phero" aria-labelledby="h-services"><div class="wrap"><nav class="crumb meta" aria-label="Fil d’Ariane"><a href="#accueil">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Services</span></nav><h1 id="h-services" tabindex="-1">Nos services<span class="dot">.</span></h1><p>Design graphique et photographie, avec la vidéo et le marketing digital en complément. Pour les particuliers, les entreprises, les églises et les artistes.</p><div class="ctas"><a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Demander un devis</a><a class="btn btn-ligne" href="#tarifs">Voir les tarifs</a></div></div></section>
+<section id="services-coeur" class="band-noir" aria-label="Nos cœurs de métier"><div class="wrap"><div class="core">
+      <article class="core-card">
+        <div class="core-head"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="7"/><rect x="14" y="14" width="13" height="13"/></svg><span class="meta">Cœur de métier</span></div>
+        <h3>Design graphique</h3>
+        <p>Logos, identités visuelles, affiches, flyers et packaging. Des visuels qui donnent confiance et font vendre.</p>
+        <ul class="core-list">
+          <li><b>Logo</b><span>dès 100 $</span></li>
+          <li><b>Identité visuelle</b><span>dès 700 $</span></li>
+          <li><b>Affiches et flyers</b><span>dès 30 $</span></li>
+          <li><b>Packaging produit</b><span>dès 100 $</span></li>
+        </ul>
+        <a class="btn btn-rouge" href="#tarifs">Voir les tarifs design</a>
+      </article>
+      <article class="core-card photo">
+        <div class="core-head"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10h5l2-3h10l2 3h5v15H4z"/><circle cx="16" cy="17" r="5"/></svg><span class="meta">Cœur de métier</span></div>
+        <h3>Photographie</h3>
+        <p>Portraits, événements, mariages et produits. Des images nettes et vivantes, retouchées avec soin et livrées en galerie privée.</p>
+        <ul class="core-list">
+          <li><b>Portrait professionnel</b><span>CV, LinkedIn, équipe</span></li>
+          <li><b>Événements</b><span>Conférences, fêtes, lancements</span></li>
+          <li><b>Mariages</b><span>Cérémonie et soirée</span></li>
+          <li><b>Produits et publicité</b><span>Sur fond studio</span></li>
+        </ul>
+        <a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance%20photo." target="_blank" rel="noopener">Réserver une séance photo</a>
+      </article>
+    </div>
+    <div class="also">
+      <span class="meta">En complément</span>
+      <div class="also-grid">
+        <article><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="8" width="19" height="16" rx="1"/><path d="M22 14l7-4v12l-7-4z"/></svg><div><h3>Production vidéo</h3><p>Reels, clips promotionnels et musicaux, captation d’événements, vidéos institutionnelles.</p></div></article>
+        <article><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 26V16M12 26V10M19 26V14M26 26V6"/></svg><div><h3>Marketing digital</h3><p>Gestion des réseaux sociaux, création de contenu, stratégie et campagnes publicitaires.</p></div></article>
+      </div>
+    </div>
+  </div></section>
+<section id="pour-qui" class="band-graph">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="meta">Pour qui</span>
+      <h2>Nous travaillons pour vous<span class="dot">.</span></h2>
+    </div>
+    <div class="who">
+      <div><h3>Particuliers</h3><p>Mariages, anniversaires, baptêmes, portraits de famille.</p><em>Des souvenirs beaux, livrés à temps.</em></div>
+      <div><h3>Entreprises et institutions</h3><p>Entreprises, banques, ONG, ambassades, ministères, universités.</p><em>Une image sérieuse et des délais tenus.</em></div>
+      <div><h3>Artistes et créateurs</h3><p>Musiciens, chorales, influenceurs, stylistes.</p><em>Un univers visuel fort pour chaque sortie.</em></div>
+      <div><h3>Marques et commerces</h3><p>Restaurants, boutiques, hôtels, organisateurs d’événements.</p><em>Du contenu régulier qui fait venir des clients.</em></div>
+    </div>
+  </div>
+</section>
+<section id="offres" class="band-studio">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="meta">Nos offres</span>
+      <h2>Des packs prêts à démarrer<span class="dot">.</span></h2>
+      <p>Chaque pack s’adapte à votre projet. Écrivez-nous et recevez votre devis sous 48 h.</p>
+    </div>
+    <div class="packs">
+      <article class="pack">
+        <span class="meta">Entreprises et marques</span>
+        <h3>Lancement de marque</h3>
+        <ul><li>Logo et mini-charte graphique</li><li>10 visuels pour les réseaux</li><li>Shooting de 15 produits</li><li>Carte de visite prête à imprimer</li></ul>
+        <a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis%20pour%20le%20pack%20Lancement%20de%20marque." target="_blank" rel="noopener">Demander ce pack</a>
+      </article>
+      <article class="pack">
+        <span class="meta">Formule mensuelle</span>
+        <h3>Présence</h3>
+        <ul><li>Gestion de 3 réseaux sociaux</li><li>20 publications et 6 reels par mois</li><li>1 shooting photo par mois</li><li>Rapport mensuel des résultats</li></ul>
+        <a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis%20pour%20la%20formule%20mensuelle%20Pr%C3%A9sence." target="_blank" rel="noopener">Demander ce pack</a>
+      </article>
+      <article class="pack feat">
+        <span class="meta">Le plus demandé</span>
+        <h3>Mariage Prestige</h3>
+        <ul><li>Photo et vidéo, journée entière</li><li>500 photos et plus</li><li>Film de 4 à 5 minutes</li><li>Livre photo de 20 pages</li></ul>
+        <a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis%20pour%20le%20pack%20Mariage%20Prestige." target="_blank" rel="noopener">Réserver ma date</a>
+      </article>
+      <article class="pack">
+        <span class="meta">Artistes</span>
+        <h3>Artiste</h3>
+        <ul><li>Shooting promotionnel</li><li>Pochette du single</li><li>Clip musical</li><li>3 visuels de sortie</li></ul>
+        <a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis%20pour%20le%20pack%20Artiste." target="_blank" rel="noopener">Demander ce pack</a>
+      </article>
+    </div>
+    <div class="carte">
+      <p><b>Aussi à la carte :</b> portrait, événement, reel, clip, location du studio. Logo, affiches, identité et packaging ont leurs tarifs fixes.</p>
+      <a class="btn btn-ligne" href="#tarifs">Voir les tarifs design</a>
+    </div>
+  </div>
+</section>
+<section id="processus" class="band-noir">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="meta">Processus</span>
+      <h2>Comment ça se passe<span class="dot">.</span></h2>
+    </div>
+    <ol class="steps">
+      <li><b>Contact</b><span>Vous nous écrivez sur WhatsApp ou passez au studio. On écoute votre besoin.</span></li>
+      <li><b>Devis</b><span>Vous recevez une proposition claire sous 48 h.</span></li>
+      <li><b>Préparation</b><span>Acompte, date réservée, planning et repérage.</span></li>
+      <li><b>Production</b><span>Shooting, tournage ou création, avec l’équipe et le matériel adaptés.</span></li>
+      <li><b>Livraison</b><span>Vos fichiers dans une galerie privée en ligne, prêts à partager.</span></li>
+    </ol>
+  </div>
+</section>
+<section id="studio" class="band-graph">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="meta">Le studio</span>
+      <h2>Un plateau pensé pour produire<span class="dot">.</span></h2>
+      <p>Fonds, lumière, loge et régie de montage réunis au même endroit, à Kinshasa.</p>
+    </div>
+    <div class="studio-grid">
+      <figure class="shot"><img src="img/studio_green.jpg" alt="Vue du plateau : fond vert, loge maquillage, poste de montage et portant"><figcaption class="meta">Visuel de projet</figcaption></figure>
+      <div class="studio-side">
+        <figure class="shot"><img src="img/studio_white.jpg" alt="Vue du plateau photo avec fond blanc, flashs et coin accueil"><figcaption class="meta">Visuel de projet</figcaption></figure>
+        <ul class="feat-list">
+          <li>Plateau photo et vidéo<span>Cyclo blanc, fond vert, fond noir</span></li>
+          <li>Loge maquillage<span>Miroir éclairé, vestiaire</span></li>
+          <li>Régie<span>Montage et étalonnage</span></li>
+          <li>Location du plateau<span>À l’heure ou à la demi-journée</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="band-noir nextp" aria-label="Page suivante"><div class="wrap"><span class="meta">Page suivante</span><a class="big" href="#portfolio">Voir le portfolio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+</div>
+
+<div class="page" id="portfolio" data-page data-title="Portfolio · GM Impact Visuel" hidden>
+<section class="band-graph phero" aria-labelledby="h-portfolio"><div class="wrap"><nav class="crumb meta" aria-label="Fil d’Ariane"><a href="#accueil">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Portfolio</span></nav><h1 id="h-portfolio" tabindex="-1">Portfolio<span class="dot">.</span></h1><p>Une sélection de 56 réalisations : 33 affiches et visuels, 6 logos et 17 photos de mariage. Touchez une image pour l’agrandir.</p></div></section>
+<section class="band-noir" aria-label="Réalisations"><div class="wrap">
+<div class="reel"><video controls preload="none" playsinline poster="video/poster.jpg" width="1280" height="720" aria-label="Portfolio en vidéo, 90 secondes"><source src="video/portfolio-motion-720p.mp4" type="video/mp4"></video><div><span class="meta">Portfolio en vidéo</span><h2>90 secondes pour tout voir<span class="dot">.</span></h2><p>Le design graphique d’abord, puis la photographie : un résumé animé de notre travail.</p></div></div>
+<div class="filters" role="group" aria-label="Filtrer les réalisations"><button type="button" aria-pressed="true" data-f="all">Tout <span>56</span></button><button type="button" aria-pressed="false" data-f="design">Affiches et visuels <span>33</span></button><button type="button" aria-pressed="false" data-f="logo">Logos <span>6</span></button><button type="button" aria-pressed="false" data-f="photo">Photographie <span>17</span></button></div>
+<div class="pf-grid" id="pf-grid">
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p14.jpg" data-cap="Mariage · Front contre front" aria-label="Agrandir : Mariage · Front contre front"><img src="img/pf/p14_t.jpg" alt="Photo de mariage : Front contre front" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Front contre front</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/kin_1.jpg" data-cap="Hatima Prayer Kinshasa 2026" aria-label="Agrandir : Hatima Prayer Kinshasa 2026"><img src="img/pf/kin_1.jpg" alt="Affiche · Hatima Prayer Kinshasa 2026" width="311" height="412" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Kinshasa 2026</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/kin_2.jpg" data-cap="Hatima Prayer Kinshasa 2026" aria-label="Agrandir : Hatima Prayer Kinshasa 2026"><img src="img/pf/kin_2.jpg" alt="Affiche · Hatima Prayer Kinshasa 2026" width="331" height="409" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Kinshasa 2026</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p01.jpg" data-cap="Mariage · La mariée, de nuit" aria-label="Agrandir : Mariage · La mariée, de nuit"><img src="img/pf/p01_t.jpg" alt="Photo de mariage : La mariée, de nuit" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · La mariée, de nuit</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/kin_3.jpg" data-cap="Hatima Prayer Kinshasa 2026" aria-label="Agrandir : Hatima Prayer Kinshasa 2026"><img src="img/pf/kin_3.jpg" alt="Affiche · Hatima Prayer Kinshasa 2026" width="273" height="411" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Kinshasa 2026</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/kin_4.jpg" data-cap="Hatima Prayer Kinshasa 2026" aria-label="Agrandir : Hatima Prayer Kinshasa 2026"><img src="img/pf/kin_4.jpg" alt="Affiche · Hatima Prayer Kinshasa 2026" width="331" height="414" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Kinshasa 2026</figcaption></figure>
+<figure class="pf-item logo" data-cat="logo"><button class="pf-open" type="button" data-full="logo/GM-ImpactVisuel_Logo-Vertical_Blanc.svg" data-cap="Logo · GM Impact Visuel" data-logo="1" aria-label="Agrandir : logo GM Impact Visuel"><img src="logo/GM-ImpactVisuel_Logo-Vertical_Blanc.svg" alt="Logo GM Impact Visuel" loading="lazy" decoding="async"></button><figcaption><span class="meta">Logo</span>GM Impact Visuel</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p11.jpg" data-cap="Mariage · Le regard" aria-label="Agrandir : Mariage · Le regard"><img src="img/pf/p11_t.jpg" alt="Photo de mariage : Le regard" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Le regard</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/kin_5.jpg" data-cap="Hatima Prayer Kinshasa 2026" aria-label="Agrandir : Hatima Prayer Kinshasa 2026"><img src="img/pf/kin_5.jpg" alt="Affiche · Hatima Prayer Kinshasa 2026" width="264" height="331" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Kinshasa 2026</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/kin_6.jpg" data-cap="Hatima Prayer Kinshasa 2026" aria-label="Agrandir : Hatima Prayer Kinshasa 2026"><img src="img/pf/kin_6.jpg" alt="Affiche · Hatima Prayer Kinshasa 2026" width="331" height="331" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Kinshasa 2026</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p06.jpg" data-cap="Mariage · La cérémonie civile" aria-label="Agrandir : Mariage · La cérémonie civile"><img src="img/pf/p06_t.jpg" alt="Photo de mariage : La cérémonie civile" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · La cérémonie civile</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/kin_7.jpg" data-cap="Hatima Prayer Kinshasa 2026" aria-label="Agrandir : Hatima Prayer Kinshasa 2026"><img src="img/pf/kin_7.jpg" alt="Affiche · Hatima Prayer Kinshasa 2026" width="443" height="331" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Kinshasa 2026</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/kin_8.jpg" data-cap="Hatima Prayer Kinshasa 2026" aria-label="Agrandir : Hatima Prayer Kinshasa 2026"><img src="img/pf/kin_8.jpg" alt="Affiche · Hatima Prayer Kinshasa 2026" width="307" height="335" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Kinshasa 2026</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p03.jpg" data-cap="Mariage · Lunettes noires" aria-label="Agrandir : Mariage · Lunettes noires"><img src="img/pf/p03_t.jpg" alt="Photo de mariage : Lunettes noires" width="640" height="896" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Lunettes noires</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/par_1.jpg" data-cap="Hatima Prayer Paris 2026" aria-label="Agrandir : Hatima Prayer Paris 2026"><img src="img/pf/par_1.jpg" alt="Affiche · Hatima Prayer Paris 2026" width="377" height="574" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Paris 2026</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/par_2.jpg" data-cap="Hatima Prayer Paris 2026" aria-label="Agrandir : Hatima Prayer Paris 2026"><img src="img/pf/par_2.jpg" alt="Affiche · Hatima Prayer Paris 2026" width="275" height="275" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Paris 2026</figcaption></figure>
+<figure class="pf-item logo" data-cat="logo"><button class="pf-open" type="button" data-full="img/pf/logo_niya.png" data-cap="Logo · Niya" data-logo="1" aria-label="Agrandir : logo Niya"><img src="img/pf/logo_niya.png" alt="Logo Niya" width="406" height="292" loading="lazy" decoding="async"></button><figcaption><span class="meta">Logo</span>Niya</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p10.jpg" data-cap="Mariage · Derrière la vitre" aria-label="Agrandir : Mariage · Derrière la vitre"><img src="img/pf/p10_t.jpg" alt="Photo de mariage : Derrière la vitre" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Derrière la vitre</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/par_3.jpg" data-cap="Hatima Prayer Paris 2026" aria-label="Agrandir : Hatima Prayer Paris 2026"><img src="img/pf/par_3.jpg" alt="Affiche · Hatima Prayer Paris 2026" width="275" height="275" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Paris 2026</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/par_4.jpg" data-cap="Hatima Prayer Paris 2026" aria-label="Agrandir : Hatima Prayer Paris 2026"><img src="img/pf/par_4.jpg" alt="Affiche · Hatima Prayer Paris 2026" width="459" height="573" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Paris 2026</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p05.jpg" data-cap="Mariage · Les alliances" aria-label="Agrandir : Mariage · Les alliances"><img src="img/pf/p05_t.jpg" alt="Photo de mariage : Les alliances" width="640" height="427" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Les alliances</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/par_5.jpg" data-cap="Hatima Prayer Paris 2026" aria-label="Agrandir : Hatima Prayer Paris 2026"><img src="img/pf/par_5.jpg" alt="Affiche · Hatima Prayer Paris 2026" width="502" height="281" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Paris 2026</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/par_6.jpg" data-cap="Hatima Prayer Paris · fichier de travail Photoshop" aria-label="Agrandir : Hatima Prayer Paris · fichier de travail Photoshop"><img src="img/pf/par_6.jpg" alt="Capture du fichier de travail de l’affiche Hatima Prayer Paris dans Photoshop" width="502" height="266" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Hatima Prayer Paris · fichier de travail Photoshop</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p15.jpg" data-cap="Mariage · Sous le voile" aria-label="Agrandir : Mariage · Sous le voile"><img src="img/pf/p15_t.jpg" alt="Photo de mariage : Sous le voile" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Sous le voile</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/moi_1.jpg" data-cap="Église La Dernière Moisson" aria-label="Agrandir : Église La Dernière Moisson"><img src="img/pf/moi_1.jpg" alt="Affiche · Église La Dernière Moisson" width="455" height="568" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église La Dernière Moisson</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/moi_2.jpg" data-cap="Église La Dernière Moisson" aria-label="Agrandir : Église La Dernière Moisson"><img src="img/pf/moi_2.jpg" alt="Affiche · Église La Dernière Moisson" width="427" height="568" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église La Dernière Moisson</figcaption></figure>
+<figure class="pf-item logo clair" data-cat="logo"><button class="pf-open" type="button" data-full="img/pf/logo_shema.jpg" data-cap="Logo · Shema Ekklesia 2026" data-logo="1" aria-label="Agrandir : logo Shema Ekklesia 2026"><img src="img/pf/logo_shema.jpg" alt="Logo Shema Ekklesia 2026" width="478" height="478" loading="lazy" decoding="async"></button><figcaption><span class="meta">Logo</span>Shema Ekklesia 2026</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p17.jpg" data-cap="Mariage · L’escalier en fer forgé" aria-label="Agrandir : Mariage · L’escalier en fer forgé"><img src="img/pf/p17_t.jpg" alt="Photo de mariage : L’escalier en fer forgé" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · L’escalier en fer forgé</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/moi_3.jpg" data-cap="Église La Dernière Moisson" aria-label="Agrandir : Église La Dernière Moisson"><img src="img/pf/moi_3.jpg" alt="Affiche · Église La Dernière Moisson" width="427" height="568" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église La Dernière Moisson</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/bre_1.jpg" data-cap="Église Porte des Brebis" aria-label="Agrandir : Église Porte des Brebis"><img src="img/pf/bre_1.jpg" alt="Affiche · Église Porte des Brebis" width="397" height="498" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église Porte des Brebis</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p08.jpg" data-cap="Mariage · Chapeau et voilette" aria-label="Agrandir : Mariage · Chapeau et voilette"><img src="img/pf/p08_t.jpg" alt="Photo de mariage : Chapeau et voilette" width="640" height="896" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Chapeau et voilette</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/bre_2.jpg" data-cap="Église Porte des Brebis" aria-label="Agrandir : Église Porte des Brebis"><img src="img/pf/bre_2.jpg" alt="Affiche · Église Porte des Brebis" width="398" height="498" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église Porte des Brebis</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/bre_3.jpg" data-cap="Église Porte des Brebis" aria-label="Agrandir : Église Porte des Brebis"><img src="img/pf/bre_3.jpg" alt="Affiche · Église Porte des Brebis" width="399" height="498" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église Porte des Brebis</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p13.jpg" data-cap="Mariage · Le mur de masques" aria-label="Agrandir : Mariage · Le mur de masques"><img src="img/pf/p13_t.jpg" alt="Photo de mariage : Le mur de masques" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Le mur de masques</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/bre_4.jpg" data-cap="Église Porte des Brebis" aria-label="Agrandir : Église Porte des Brebis"><img src="img/pf/bre_4.jpg" alt="Affiche · Église Porte des Brebis" width="396" height="496" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église Porte des Brebis</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/foi_1.jpg" data-cap="Église La Foi Triomphante" aria-label="Agrandir : Église La Foi Triomphante"><img src="img/pf/foi_1.jpg" alt="Affiche · Église La Foi Triomphante" width="453" height="461" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église La Foi Triomphante</figcaption></figure>
+<figure class="pf-item logo" data-cat="logo"><button class="pf-open" type="button" data-full="img/pf/logo_pentecote.png" data-cap="Logo · Le bruit de la Pentecôte 2026" data-logo="1" aria-label="Agrandir : logo Le bruit de la Pentecôte 2026"><img src="img/pf/logo_pentecote.png" alt="Logo Le bruit de la Pentecôte 2026" width="652" height="421" loading="lazy" decoding="async"></button><figcaption><span class="meta">Logo</span>Le bruit de la Pentecôte 2026</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p07.jpg" data-cap="Mariage · Portrait des mariés" aria-label="Agrandir : Mariage · Portrait des mariés"><img src="img/pf/p07_t.jpg" alt="Photo de mariage : Portrait des mariés" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Portrait des mariés</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/foi_2.jpg" data-cap="Église La Foi Triomphante" aria-label="Agrandir : Église La Foi Triomphante"><img src="img/pf/foi_2.jpg" alt="Affiche · Église La Foi Triomphante" width="361" height="460" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église La Foi Triomphante</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/foi_3.jpg" data-cap="Église La Foi Triomphante" aria-label="Agrandir : Église La Foi Triomphante"><img src="img/pf/foi_3.jpg" alt="Affiche · Église La Foi Triomphante" width="361" height="460" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église La Foi Triomphante</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p16.jpg" data-cap="Mariage · Séance de nuit" aria-label="Agrandir : Mariage · Séance de nuit"><img src="img/pf/p16_t.jpg" alt="Photo de mariage : Séance de nuit" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Séance de nuit</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/foi_4.jpg" data-cap="Église La Foi Triomphante" aria-label="Agrandir : Église La Foi Triomphante"><img src="img/pf/foi_4.jpg" alt="Affiche · Église La Foi Triomphante" width="361" height="461" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Église La Foi Triomphante</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/pen_1.jpg" data-cap="Le bruit de la Pentecôte 2026" aria-label="Agrandir : Le bruit de la Pentecôte 2026"><img src="img/pf/pen_1.jpg" alt="Affiche · Le bruit de la Pentecôte 2026" width="549" height="733" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Le bruit de la Pentecôte 2026</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p02.jpg" data-cap="Mariage · Le sourire de la mariée" aria-label="Agrandir : Mariage · Le sourire de la mariée"><img src="img/pf/p02_t.jpg" alt="Photo de mariage : Le sourire de la mariée" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Le sourire de la mariée</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/pen_2.jpg" data-cap="Le bruit de la Pentecôte 2026" aria-label="Agrandir : Le bruit de la Pentecôte 2026"><img src="img/pf/pen_2.jpg" alt="Affiche · Le bruit de la Pentecôte 2026" width="351" height="348" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Le bruit de la Pentecôte 2026</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/pen_3.jpg" data-cap="Le bruit de la Pentecôte 2026" aria-label="Agrandir : Le bruit de la Pentecôte 2026"><img src="img/pf/pen_3.jpg" alt="Affiche · Le bruit de la Pentecôte 2026" width="351" height="349" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Le bruit de la Pentecôte 2026</figcaption></figure>
+<figure class="pf-item logo" data-cat="logo"><button class="pf-open" type="button" data-full="img/pf/logo_asiel.png" data-cap="Logo · Asiel Picture" data-logo="1" aria-label="Agrandir : logo Asiel Picture"><img src="img/pf/logo_asiel.png" alt="Logo Asiel Picture" width="338" height="389" loading="lazy" decoding="async"></button><figcaption><span class="meta">Logo</span>Asiel Picture</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p12.jpg" data-cap="Mariage · Gros plan" aria-label="Agrandir : Mariage · Gros plan"><img src="img/pf/p12_t.jpg" alt="Photo de mariage : Gros plan" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Gros plan</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/ind_1.jpg" data-cap="Festi Car" aria-label="Agrandir : Festi Car"><img src="img/pf/ind_1.jpg" alt="Visuel · Festi Car" width="422" height="550" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Festi Car</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/ind_2.jpg" data-cap="T-shirt Strong" aria-label="Agrandir : T-shirt Strong"><img src="img/pf/ind_2.jpg" alt="Visuel · T-shirt Strong" width="242" height="264" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>T-shirt Strong</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p04.jpg" data-cap="Mariage · Complicité" aria-label="Agrandir : Mariage · Complicité"><img src="img/pf/p04_t.jpg" alt="Photo de mariage : Complicité" width="640" height="896" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · Complicité</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/ind_3.jpg" data-cap="Strong Night Gala" aria-label="Agrandir : Strong Night Gala"><img src="img/pf/ind_3.jpg" alt="Visuel · Strong Night Gala" width="242" height="244" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Strong Night Gala</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/ind_4.jpg" data-cap="Leadership Training Retreat" aria-label="Agrandir : Leadership Training Retreat"><img src="img/pf/ind_4.jpg" alt="Visuel · Leadership Training Retreat" width="430" height="538" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Leadership Training Retreat</figcaption></figure>
+<figure class="pf-item" data-cat="photo"><button class="pf-open" type="button" data-full="img/pf/p09.jpg" data-cap="Mariage · L’escalier vert" aria-label="Agrandir : Mariage · L’escalier vert"><img src="img/pf/p09_t.jpg" alt="Photo de mariage : L’escalier vert" width="640" height="960" loading="lazy" decoding="async"></button><figcaption><span class="meta">Photographie</span>Mariage · L’escalier vert</figcaption></figure>
+<figure class="pf-item" data-cat="design"><button class="pf-open" type="button" data-full="img/pf/ind_5.jpg" data-cap="Un cœur ouvert" aria-label="Agrandir : Un cœur ouvert"><img src="img/pf/ind_5.jpg" alt="Visuel · Un cœur ouvert" width="403" height="537" loading="lazy" decoding="async"></button><figcaption><span class="meta">Design graphique</span>Un cœur ouvert</figcaption></figure>
+<figure class="pf-item logo" data-cat="logo"><button class="pf-open" type="button" data-full="img/pf/logo_soirees.png" data-cap="Logo · 2 Soirées de Réconfort" data-logo="1" aria-label="Agrandir : logo 2 Soirées de Réconfort"><img src="img/pf/logo_soirees.png" alt="Logo 2 Soirées de Réconfort" width="522" height="523" loading="lazy" decoding="async"></button><figcaption><span class="meta">Logo</span>2 Soirées de Réconfort</figcaption></figure>
+</div>
+<div class="sec-foot"><a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Un projet ? Écrivez-nous</a><a class="btn btn-ligne" href="#tarifs">Voir les tarifs</a></div>
+</div></section>
+<section class="band-graph nextp" aria-label="Page suivante"><div class="wrap"><span class="meta">Page suivante</span><a class="big" href="#tarifs">Voir la grille tarifaire<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+</div>
+
+<div class="page" id="tarifs" data-page data-title="Tarifs · GM Impact Visuel" hidden>
+<section class="band-graph phero" aria-labelledby="h-tarifs"><div class="wrap"><nav class="crumb meta" aria-label="Fil d’Ariane"><a href="#accueil">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Tarifs</span></nav><h1 id="h-tarifs" tabindex="-1">Grille tarifaire<span class="dot">.</span></h1><p>Logo, identité visuelle, affiches et flyers, packaging et autres conceptions. Des prix clairs, fixés à l’avance, en dollars américains (USD).</p><div class="ctas"><a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Demander un devis</a><a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20pouvez-vous%20m%E2%80%99envoyer%20votre%20grille%20tarifaire%20en%20PDF%20%3F" target="_blank" rel="noopener">Recevoir la grille en PDF</a></div></div></section>
+<section class="band-noir" aria-label="Tarifs par conception"><div class="wrap" id="grille">
+<div class="tabs" role="tablist" aria-label="Catégories de design"><button type="button" role="tab" id="tab-logo" aria-controls="panel-logo" aria-selected="true" tabindex="0">Logo</button><button type="button" role="tab" id="tab-identite" aria-controls="panel-identite" aria-selected="false" tabindex="-1">Identité visuelle</button><button type="button" role="tab" id="tab-affiches" aria-controls="panel-affiches" aria-selected="false" tabindex="-1">Affiches et flyers</button><button type="button" role="tab" id="tab-packaging" aria-controls="panel-packaging" aria-selected="false" tabindex="-1">Packaging</button><button type="button" role="tab" id="tab-autres" aria-controls="panel-autres" aria-selected="false" tabindex="-1">Autres conceptions</button></div>
+    <div class="tpanel" role="tabpanel" id="panel-logo" aria-labelledby="tab-logo">
+<p class="tlead">Trois formules, du logo simple au logo complet avec guide d’utilisation.</p>
+<div class="tiers n3"><article class="tier">
+<h4>Logo Essentiel</h4><p class="price">100 $</p><p class="tier-desc">Pour démarrer vite avec un logo propre et fonctionnel, en formats essentiels pour le digital.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>1</dd></div><div><dt>Retouches incluses</dt><dd>2</dd></div><div><dt>Délai</dt><dd>7 jours</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Logo principal</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG transparent</span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Concept expliqué (argumentaire PDF)<em class="sr"> (non inclus)</em></span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Version secondaire<em class="sr"> (non inclus)</em></span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Fichier PDF vectoriel<em class="sr"> (non inclus)</em></span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Fichier source modifiable (AI / EPS)<em class="sr"> (non inclus)</em></span></li></ul>
+<a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Logo%20Essentiel%20%28100%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article><article class="tier best"><span class="badge">Meilleure option</span>
+<h4>Logo Pro</h4><p class="price">300 $</p><p class="tier-desc">Plus de choix et de flexibilité : plusieurs propositions, fichier vectoriel, déclinaisons et formats complets.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>2</dd></div><div><dt>Retouches incluses</dt><dd>5</dd></div><div><dt>Délai</dt><dd>10 jours</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Logo principal</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG transparent</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Concept expliqué (argumentaire PDF)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Version secondaire</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier PDF vectoriel</span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Fichier source modifiable (AI / EPS)<em class="sr"> (non inclus)</em></span></li></ul>
+<a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Logo%20Pro%20%28300%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article><article class="tier">
+<h4>Logo Premium+</h4><p class="price"><small>dès</small> 500 $</p><p class="tier-desc">Pour les projets ambitieux : déclinaisons avancées, guide d’utilisation et livraison structurée.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>3</dd></div><div><dt>Retouches incluses</dt><dd>10</dd></div><div><dt>Délai</dt><dd>14 jours</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Logo principal</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG transparent</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Concept expliqué (argumentaire PDF)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Version secondaire</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier PDF vectoriel</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier source modifiable (AI / EPS)</span></li></ul>
+<a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Logo%20Premium%2B%20%28%C3%A0%20partir%20de%20500%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article></div>
+</div><div class="tpanel" role="tabpanel" id="panel-identite" aria-labelledby="tab-identite" hidden>
+<p class="tlead">Une identité visuelle va au-delà du logo. Elle garantit la cohérence de votre marque sur tous les supports.</p>
+<div class="tiers n2"><article class="tier">
+<h4>Identité visuelle Standard</h4><p class="price">700 $</p><p class="tier-desc">Pour les PME, les start-up ambitieuses et les marques en structuration.</p>
+<dl class="specs"><div><dt>Retouches incluses</dt><dd>3 maximum, après choix du concept</dd></div><div><dt>Délai</dt><dd>15 jours</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Logo principal</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Logo secondaire</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Icône / symbole</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Palette de couleurs officielle</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Typographies officielles</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mini charte graphique (10 à 15 pages PDF)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>5 mockups réalistes</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Carte de visite (design)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Signature e-mail professionnelle</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Photo de profil réseaux sociaux</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers sources complets</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Livraison structurée</span></li></ul>
+<a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Identit%C3%A9%20visuelle%20Standard%20%28700%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article><article class="tier">
+<h4>Identité visuelle Premium+</h4><p class="price"><small>dès</small> 1 200 $</p><p class="tier-desc">Pour les entreprises établies, les projets d’envergure, les marques nationales ou internationales.</p>
+<dl class="specs"><div><dt>Retouches incluses</dt><dd>5 maximum, après choix du concept</dd></div><div><dt>Délai</dt><dd>20 jours</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tout le pack Standard</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Système complet de déclinaisons du logo</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Règles détaillées d’utilisation</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Règles typographiques complètes</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Construction graphique du logo</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zone de protection</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Applications sur papeterie complète</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Templates réseaux sociaux (3 modèles)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mockups avancés</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Brand board complète</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Guide de marque de 20 à 30 pages</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Accompagnement 30 jours après livraison</span></li></ul>
+<a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Identit%C3%A9%20visuelle%20Premium%2B%20%28%C3%A0%20partir%20de%201%20200%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article></div>
+</div><div class="tpanel" role="tabpanel" id="panel-affiches" aria-labelledby="tab-affiches" hidden>
+<p class="tlead">Des visuels pour les réseaux sociaux, l’impression petit format et les campagnes grand format.</p>
+<div class="tiers n3"><article class="tier">
+<h4>Offre Essentielle</h4><p class="price">30 $</p><p class="tier-desc">Affiches et flyers destinés uniquement à la diffusion sur les réseaux sociaux.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>1</dd></div><div><dt>Retouches incluses</dt><dd>1</dd></div><div><dt>Délai</dt><dd>3 jours ouvrables</dd></div><div><dt>Supports</dt><dd>Affiches digitales (Instagram, Facebook…)</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG</span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Fichier prêt à l’impression<em class="sr"> (non inclus)</em></span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Fichier source modifiable (AI / PSD)<em class="sr"> (non inclus)</em></span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Déclinaisons supplémentaires<em class="sr"> (non inclus)</em></span></li></ul>
+<a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Offre%20Essentielle%20%2830%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article><article class="tier best"><span class="badge">Meilleure option</span>
+<h4>Offre Pro</h4><p class="price">50 $</p><p class="tier-desc">Visuels optimisés pour le digital, l’impression et la distribution terrain en petit format.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>1</dd></div><div><dt>Retouches incluses</dt><dd>3</dd></div><div><dt>Délai</dt><dd>2 jours ouvrables</dd></div><div><dt>Supports</dt><dd>Digital et impression petit format (A4, A5, A6…)</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier prêt à l’impression</span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Fichier source modifiable (AI / PSD)<em class="sr"> (non inclus)</em></span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>1 déclinaison supplémentaire</span></li></ul>
+<a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Offre%20Pro%20%2850%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article><article class="tier">
+<h4>Offre Premium+</h4><p class="price"><small>dès</small> 150 $</p><p class="tier-desc">Visuels pensés pour les impressions grand format et les campagnes marketing visibles.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>2</dd></div><div><dt>Retouches incluses</dt><dd>5</dd></div><div><dt>Délai</dt><dd>2 jours ouvrables</dd></div><div><dt>Supports</dt><dd>Digital et grand format (panneaux, bâches, visuels publicitaires…)</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier prêt à l’impression</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier source modifiable (AI / PSD)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>2 déclinaisons supplémentaires</span></li></ul>
+<a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Offre%20Premium%2B%20%28%C3%A0%20partir%20de%20150%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article></div>
+</div><div class="tpanel" role="tabpanel" id="panel-packaging" aria-labelledby="tab-packaging" hidden>
+<p class="tlead">Le packaging influence directement la perception de votre produit et la décision d’achat.</p>
+<div class="tiers n3"><article class="tier">
+<h4>Packaging Essentiel</h4><p class="price">100 $</p><p class="tier-desc">Pour les petits lancements ou les produits en test. Design prêt à imprimer, budget maîtrisé.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>1</dd></div><div><dt>Retouches incluses</dt><dd>1</dd></div><div><dt>Délai</dt><dd>5 jours</dd></div><div><dt>Mockups de présentation</dt><dd>1</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier prêt à l’impression (PDF HD)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG</span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Affiches de campagne produit<em class="sr"> (non inclus)</em></span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Fichier source modifiable (AI / EPS / PSD)<em class="sr"> (non inclus)</em></span></li><li class="no"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Vidéo de présentation<em class="sr"> (non inclus)</em></span></li></ul>
+<a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Packaging%20Essentiel%20%28100%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article><article class="tier best"><span class="badge">Meilleure option</span>
+<h4>Packaging Pro</h4><p class="price">300 $</p><p class="tier-desc">Pour les marques structurées qui veulent plus d’impact. Recommandé pour une mise en marché sérieuse.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>1</dd></div><div><dt>Retouches incluses</dt><dd>3</dd></div><div><dt>Délai</dt><dd>5 jours</dd></div><div><dt>Mockups de présentation</dt><dd>3</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier prêt à l’impression (PDF HD)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>2 affiches de campagne produit</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier source modifiable (AI / EPS / PSD)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Vidéo de présentation</span></li></ul>
+<a class="btn btn-rouge" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Packaging%20Pro%20%28300%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article><article class="tier">
+<h4>Packaging Premium+</h4><p class="price"><small>dès</small> 600 $</p><p class="tier-desc">Rendu professionnel complet et déclinaisons marketing, pour maximiser la crédibilité du produit.</p>
+<dl class="specs"><div><dt>Propositions</dt><dd>3</dd></div><div><dt>Retouches incluses</dt><dd>5</dd></div><div><dt>Délai</dt><dd>10 jours</dd></div><div><dt>Mockups de présentation</dt><dd>5</dd></div></dl>
+<ul class="incl"><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier prêt à l’impression (PDF HD)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichiers JPG HD et PNG</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>3 à 5 affiches de campagne produit</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fichier source modifiable (AI / EPS / PSD)</span></li><li class="yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Vidéo de présentation</span></li></ul>
+<a class="btn btn-ligne" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20l%E2%80%99offre%20Packaging%20Premium%2B%20%28%C3%A0%20partir%20de%20600%20%24%29." target="_blank" rel="noopener">Choisir cette offre</a>
+</article></div>
+</div>
+<div class="tpanel" role="tabpanel" id="panel-autres" aria-labelledby="tab-autres" hidden>
+<p class="tlead">Papeterie, événements, réseaux sociaux, édition : un prix fixe par conception, 2 retouches incluses, impression non comprise.</p>
+<div class="others"><div class="og"><h4 class="meta">Papeterie et impression</h4><ul class="olist"><li><div class="on"><b>Carte de visite</b><span>Recto-verso, prête à imprimer</span></div><span class="op">25 $</span><span class="od">Délai : 2 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Carte%20de%20visite%20%2825%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Kit papeterie</b><span>Carte de visite, papier en-tête, enveloppe</span></div><span class="op">70 $</span><span class="od">Délai : 3 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Kit%20papeterie%20%2870%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Roll-up / kakémono</b><span>Format 85 × 200 cm, prêt à imprimer</span></div><span class="op">60 $</span><span class="od">Délai : 3 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Roll-up%20%2F%20kak%C3%A9mono%20%2860%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Dépliant 3 volets</b><span>Recto-verso, prêt à imprimer</span></div><span class="op">80 $</span><span class="od">Délai : 4 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20D%C3%A9pliant%203%20volets%20%2880%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Menu de restaurant</b><span>Recto-verso, digital et impression</span></div><span class="op">50 $</span><span class="od">Délai : 3 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Menu%20de%20restaurant%20%2850%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Brochure / catalogue</b><span>8 pages, puis 12 $ par page en plus</span></div><span class="op"><small>dès </small>120 $</span><span class="od">Délai : 7 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Brochure%20%2F%20catalogue%20%28d%C3%A8s%20120%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li></ul></div>
+<div class="og"><h4 class="meta">Événements et églises</h4><ul class="olist"><li><div class="on"><b>Invitation / faire-part</b><span>Version digitale et version à imprimer</span></div><span class="op">40 $</span><span class="od">Délai : 2 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Invitation%20%2F%20faire-part%20%2840%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Programme (culte, événement)</b><span>Format A5, recto-verso</span></div><span class="op">35 $</span><span class="od">Délai : 2 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Programme%20%28culte%2C%20%C3%A9v%C3%A9nement%29%20%2835%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Badge, ticket, carte d’accès</b><span>Modèle avec noms modifiables</span></div><span class="op">20 $</span><span class="od">Délai : 1 jour</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Badge%2C%20ticket%2C%20carte%20d%E2%80%99acc%C3%A8s%20%2820%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Kit événement</b><span>Affiche Pro, invitation, programme, badge : 25 $ d’économie</span></div><span class="op">120 $</span><span class="od">Délai : 5 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Kit%20%C3%A9v%C3%A9nement%20%28120%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li></ul></div>
+<div class="og"><h4 class="meta">Digital et réseaux sociaux</h4><ul class="olist"><li><div class="on"><b>Bannière réseaux sociaux</b><span>Couverture Facebook, YouTube ou LinkedIn</span></div><span class="op">25 $</span><span class="od">Délai : 1 jour</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Banni%C3%A8re%20r%C3%A9seaux%20sociaux%20%2825%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Miniature YouTube</b><span>Format 1280 × 720, titre accrocheur</span></div><span class="op">15 $</span><span class="od">Délai : 1 jour</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Miniature%20YouTube%20%2815%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Carrousel Instagram</b><span>Jusqu’à 6 images dans le même style</span></div><span class="op">70 $</span><span class="od">Délai : 3 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Carrousel%20Instagram%20%2870%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Pack réseaux sociaux</b><span>8 visuels par mois, même style</span></div><span class="op">180 $<small> /mois</small></span><span class="od">Délai : Chaque mois</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Pack%20r%C3%A9seaux%20sociaux%20%28180%20%24%20par%20mois%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li></ul></div>
+<div class="og"><h4 class="meta">Édition et objets</h4><ul class="olist"><li><div class="on"><b>Couverture de livre</b><span>1re et 4e de couverture et dos</span></div><span class="op">120 $</span><span class="od">Délai : 5 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Couverture%20de%20livre%20%28120%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>Certificat ou diplôme</b><span>Modèle avec noms modifiables</span></div><span class="op">25 $</span><span class="od">Délai : 2 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20Certificat%20ou%20dipl%C3%B4me%20%2825%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li><li><div class="on"><b>T-shirt, objet publicitaire</b><span>Visuel prêt pour l’impression</span></div><span class="op">30 $</span><span class="od">Délai : 2 jours</span><a class="mini-w ob" href="https://wa.me/243999623778?text=Bonjour%20GM%20Impact%20Visuel%2C%20je%20souhaite%20commander%20%3A%20T-shirt%2C%20objet%20publicitaire%20%2830%20%24%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Commander</a></li></ul></div></div>
+</div>
+<div class="blk-title"><span class="meta">Options</span><h3>À ajouter si besoin<span class="dot">.</span></h3></div>
+<div class="opts" style="margin-top:0"><div><span class="meta">Livraison express 24 h</span><b>+30 %</b><span>du prix de l’offre</span></div><div><span class="meta">Retouche en plus</span><b>15 à 30 %</b><span>du prix, au-delà des retouches prévues</span></div><div><span class="meta">Fichier source</span><b>+20 $</b><span>quand il n’est pas inclus</span></div><div><span class="meta">Mockup en plus</span><b>10 $</b><span>par mise en situation</span></div></div>
+<div class="blk-title"><span class="meta">Conditions</span><h3>Ce qu’il faut savoir<span class="dot">.</span></h3></div>
+<div class="conds n6" style="margin-top:0">
+      <div><span class="meta">Paiement</span><p>70 % à la commande, 30 % à la livraison.</p></div>
+      <div><span class="meta">Retouches en plus</span><p>Au-delà des retouches prévues, chaque retouche est facturée entre 15 et 30 %.</p></div>
+      <div><span class="meta">Droits</span><p>Designs originaux, jamais revendus. Droits commerciaux transférés après paiement complet ; le graphiste reste l’auteur.</p></div>
+      <div><span class="meta">À nous envoyer</span><p>Un brief clair, vos couleurs ou inspirations, la date souhaitée et l’usage prévu (impression, réseaux sociaux…).</p></div>
+      <div><span class="meta">Délais</span><p>Comptés à partir de la réception du brief complet et de l’acompte.</p></div>
+      <div><span class="meta">Impression</span><p>Non comprise dans les prix. Nous pouvons la gérer avec nos imprimeurs, sur devis.</p></div>
+    </div>
+<div class="blk-title"><span class="meta">Commander</span><h3>Comment commander<span class="dot">.</span></h3></div><ol class="steps n4"><li><b>Écrivez-nous</b><span>Sur WhatsApp au +243 999 623 778 ou par e-mail.</span></li><li><b>Envoyez votre brief</b><span>Textes, couleurs, inspirations, date souhaitée et usage prévu.</span></li><li><b>Versez l’acompte</b><span>70 % pour lancer le travail. Le délai démarre à ce moment.</span></li><li><b>Recevez vos fichiers</b><span>Après validation et paiement du solde de 30 %.</span></li></ol>
+<p class="tnote">Tous les tarifs sont en dollars américains (USD), valables en 2026. Devis personnalisé sur demande.</p>
+</div></section>
+<section class="band-graph nextp" aria-label="Page suivante"><div class="wrap"><span class="meta">Page suivante</span><a class="big" href="#apropos">Qui sommes-nous ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+</div>
+
+<div class="page" id="apropos" data-page data-title="À propos · GM Impact Visuel" hidden>
+<section class="band-graph phero" aria-labelledby="h-apropos"><div class="wrap"><nav class="crumb meta" aria-label="Fil d’Ariane"><a href="#accueil">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">À propos</span></nav><h1 id="h-apropos" tabindex="-1">À propos<span class="dot">.</span></h1><p>GM Impact Visuel est un studio créatif fondé à Kinshasa par Gustave Madia, designer graphique et photographe.</p></div></section>
+<section class="band-noir" aria-labelledby="h-founder"><div class="wrap"><div class="founder"><figure class="viewer"><div class="frame"><div class="circle" aria-hidden="true"></div><img src="img/portrait.webp" alt="Gustave Madia, fondateur de GM Impact Visuel" loading="lazy"><div class="vf"><i></i><i></i><i></i><i></i></div></div><figcaption class="meta"><span>GM—001</span><span>Gustave Madia · Fondateur</span></figcaption></figure><div class="txt"><span class="meta">Le fondateur</span><h2 id="h-founder">L’alliance de la technique et de la créativité<span class="dot">.</span></h2><p>Designer graphique et photographe, je suis animé par une double passion : comprendre les systèmes complexes et concevoir des solutions visuelles percutantes. Je transforme les idées en images.</p><p>Ma mission : accompagner vos projets de la conception technique à l’identité visuelle, du schéma électronique à la charte graphique complète.</p><span class="meta" style="color:var(--gris);margin-top:8px">Logiciels</span><ul class="skills"><li>Photoshop<i aria-label="5 sur 5"><b class="f"></b><b class="f"></b><b class="f"></b><b class="f"></b><b class="f"></b></i></li><li>Lightroom<i aria-label="4 sur 5"><b class="f"></b><b class="f"></b><b class="f"></b><b class="f"></b><b></b></i></li><li>Capture One<i aria-label="4 sur 5"><b class="f"></b><b class="f"></b><b class="f"></b><b class="f"></b><b></b></i></li><li>Canva<i aria-label="4 sur 5"><b class="f"></b><b class="f"></b><b class="f"></b><b class="f"></b><b></b></i></li><li>Illustrator<i aria-label="3 sur 5"><b class="f"></b><b class="f"></b><b class="f"></b><b></b><b></b></i></li><li>InDesign<i aria-label="2 sur 5"><b class="f"></b><b class="f"></b><b></b><b></b><b></b></i></li></ul></div></div></div></section>
+<section class="band-studio quote-band" aria-label="Le mot du fondateur"><div class="wrap"><span class="meta">Le mot du fondateur</span><q>Pour moi, le design n’est pas qu’une question de couleurs, et la photographie n’est pas qu’une question de lumière. C’est une question d’<em>émotion</em> et de <em>clarté</em>.</q><span class="meta">Gustave Madia</span></div></section>
+<section id="vision" class="band-graph">
+  <div class="wrap">
+    <div class="about">
+      <div>
+        <span class="meta" style="color:var(--gris)">Le studio</span>
+        <blockquote style="margin-top:20px">Une image peut transformer une idée en mouvement, et un message en influence<span class="dot">.</span></blockquote>
+        <div class="sig"><img src="logo/GM-ImpactVisuel_Monogramme_Blanc.svg" alt=""><div><b>Gustave Madia</b><span>Fondateur et directeur artistique</span></div></div>
+        <p style="margin-top:24px;color:var(--gris-clair);max-width:52ch">Designer, photographe et écrivain, Gustave Madia a fondé GM Impact Visuel pour offrir à Kinshasa un studio où chaque image sert un message.</p>
+      </div>
+      <div>
+        <div class="cols">
+          <div class="box"><span class="meta">Vision</span><h3>Devenir une référence créative en Afrique et à l’international.</h3><p>En révélant le potentiel artistique, culturel et humain de notre région.</p></div>
+          <div class="box"><span class="meta">Mission</span><h3>Produire des contenus visuels de haute qualité.</h3><p>Pour les marques, entreprises, artistes et institutions, et en formant de jeunes talents créatifs.</p></div>
+        </div>
+        <div class="values" aria-label="Nos valeurs"><span>Excellence</span><span>Créativité</span><span>Discipline</span><span>Authenticité</span><span>Transmission</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="band-rouge manif" aria-label="Notre manifeste">
+  <div class="wrap">
+    <img class="ghost" src="logo/GM-ImpactVisuel_Monogramme_Blanc.svg" alt="">
+    <span class="meta">Notre manifeste</span>
+    <h2>Osez rêver mieux.</h2>
+    <p>Une image qui fait vibrer. Un design qui fait rêver. Une émotion éternelle.</p>
+  </div>
+</section>
+<section class="band-noir nextp" aria-label="Page suivante"><div class="wrap"><span class="meta">Page suivante</span><a class="big" href="#contact">Nous contacter<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+</div>
+
+<div class="page" id="contact" data-page data-title="Contact · GM Impact Visuel" hidden>
+<section class="band-graph phero" aria-labelledby="h-contact"><div class="wrap"><nav class="crumb meta" aria-label="Fil d’Ariane"><a href="#accueil">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav><h1 id="h-contact" tabindex="-1">Parlons de votre projet<span class="dot">.</span></h1><p>Écrivez-nous sur WhatsApp ou remplissez le formulaire : votre message part tout prêt. Devis gratuit sous 48 h.</p></div></section>
+<section class="band-studio" aria-label="Coordonnées et demande de devis"><div class="wrap">
+<div class="contact">
+      <div class="lines">
+        <div class="line"><div><span class="meta">WhatsApp</span><b id="n1">+243 999 623 778</b></div><div class="acts"><button class="mini" type="button" data-copy="n1">Copier</button><a class="mini" href="https://wa.me/243999623778" target="_blank" rel="noopener">Écrire</a></div></div>
+        <div class="line"><div><span class="meta">WhatsApp</span><b id="n2">+243 999 111 253</b></div><div class="acts"><button class="mini" type="button" data-copy="n2">Copier</button><a class="mini" href="https://wa.me/243999111253" target="_blank" rel="noopener">Écrire</a></div></div>
+        <div class="line"><div><span class="meta">Studio</span><b>Kinshasa, RDC</b></div></div>
+        <div class="line"><div><span class="meta">E-mail</span><b id="mail">gmimpactvisuel@gmail.com</b></div><div class="acts"><button class="mini" type="button" data-copy="mail">Copier</button></div></div>
+        <div class="line"><div><span class="meta">Réseaux sociaux</span><b>GM Impact Visuel Officiel</b></div></div>
+      </div>
+      <form class="form" id="devis" novalidate>
+        <h3>Demande de devis</h3>
+        <div class="row">
+          <div class="field"><label for="nom">Votre nom</label><input id="nom" name="nom" type="text" autocomplete="name" placeholder="Nom et prénom"></div>
+          <div class="field"><label for="service">Service</label>
+            <select id="service" name="service">
+              <option>Photographie</option><option>Logo</option><option>Identité visuelle</option><option>Affiches et flyers</option><option>Packaging</option><option>Autre conception (carte de visite, roll-up, invitation…)</option><option>Production vidéo</option><option>Marketing digital</option>
+              <option>Pack Lancement de marque</option><option>Formule Présence</option><option>Pack Mariage Prestige</option><option>Pack Artiste</option><option>Location du studio</option>
+            </select></div>
+        </div>
+        <div class="field"><label for="date">Date souhaitée</label><input id="date" name="date" type="date"></div>
+        <div class="field"><label for="message">Votre projet</label><textarea id="message" name="message" placeholder="Quel est votre projet, où, pour combien de personnes ?"></textarea></div>
+        <a class="btn btn-rouge" id="wa-send" href="https://wa.me/243999623778" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.7L4 20z"/></svg>Envoyer sur WhatsApp</a>
+        <p class="note">Le bouton ouvre WhatsApp avec votre message prêt. Il ne reste qu’à l’envoyer.</p>
+      </form>
+    </div>
+  
+</div></section>
+<section class="band-noir nextp" aria-label="Page suivante"><div class="wrap"><span class="meta">Retour</span><a class="big" href="#accueil">Revenir à l’accueil<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+</div>
+</main>
+
+<footer class="band-noir foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="#accueil" aria-label="GM Impact Visuel, accueil"><img src="logo/GM-ImpactVisuel_Logo-Horizontal_Blanc.svg" alt="GM Impact Visuel"></a>
+      <p>Là où les idées ont un impact<span class="dot">.</span></p>
+    </div>
+    <nav class="foot-nav" aria-label="Pied de page"><a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#tarifs">Tarifs</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></nav>
+    <div class="foot-nav"><a href="https://wa.me/243999623778" target="_blank" rel="noopener">WhatsApp +243 999 623 778</a><a href="https://wa.me/243999111253" target="_blank" rel="noopener">WhatsApp +243 999 111 253</a><span style="font-size:14px;color:var(--gris-clair)">gmimpactvisuel@gmail.com</span><span style="font-size:14px;color:var(--gris-clair)">GM Impact Visuel Officiel</span></div>
+    <div class="foot-bot"><span>© 2026 GM Impact Visuel · Kinshasa, République démocratique du Congo</span><span>Design graphique · Photographie · Vidéo · Digital</span></div>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Visionneuse d’images"><div class="lb-in"><div class="lb-top"><span class="meta" id="lb-count">1 / 1</span><button type="button" id="lb-close" aria-label="Fermer la visionneuse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Fermer</button></div><figure class="lb-fig"><img id="lb-img" src="" alt=""></figure><div class="lb-bot"><p id="lb-cap"></p><div class="lb-btns"><button type="button" id="lb-prev" aria-label="Image précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" id="lb-next" aria-label="Image suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div></div></div></dialog>
+
+<script>
+(function(){
+  var WA='243999623778';
+  function toast(t){var d=document.createElement('div');d.className='toast';d.setAttribute('role','status');d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},1800)}
+
+  // Menu mobile
+  var btn=document.getElementById('menu-btn'),panel=document.getElementById('panel');
+  function closeMenu(){panel.hidden=true;btn.setAttribute('aria-expanded','false')}
+  btn.addEventListener('click',function(){var open=panel.hidden;panel.hidden=!open;btn.setAttribute('aria-expanded',String(open))});
+  panel.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});
+
+  // Onglets des tarifs
+  var tabsEl=document.querySelector('.tabs'),tbs=[];
+  function selTab(t,focus){tbs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on});if(focus)t.focus()}
+  if(tabsEl){
+    tbs=[].slice.call(tabsEl.querySelectorAll('[role="tab"]'));
+    tbs.forEach(function(b,i){
+      b.addEventListener('click',function(){selTab(b)});
+      b.addEventListener('keydown',function(e){var k=e.key,j=i;if(k==='ArrowRight')j=(i+1)%tbs.length;else if(k==='ArrowLeft')j=(i-1+tbs.length)%tbs.length;else return;e.preventDefault();selTab(tbs[j],true)});
+    });
+  }
+
+  // Pages : une page par ancre (#accueil, #services, #portfolio, #tarifs, #apropos, #contact)
+  var pages=[].slice.call(document.querySelectorAll('[data-page]'));
+  var navA=[].slice.call(document.querySelectorAll('.nav a, .panel nav a:not(.btn), .foot-nav a[href^="#"]'));
+  var first=true;
+  function jump(fn){var r=document.documentElement,o=r.style.scrollBehavior;r.style.scrollBehavior='auto';fn();r.style.scrollBehavior=o}
+  function route(){
+    var h=decodeURIComponent((location.hash||'').slice(1))||'accueil';
+    var target=document.getElementById(h),page=null;
+    if(target){page=target.hasAttribute('data-page')?target:target.closest('[data-page]')}
+    if(!page){page=document.getElementById('accueil');target=null}
+    pages.forEach(function(p){p.hidden=p!==page});
+    navA.forEach(function(a){if(a.getAttribute('href')==='#'+page.id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    document.title=page.getAttribute('data-title')||document.title;
+    closeMenu();
+    if(target&&target!==page){
+      if(target.getAttribute('role')==='tabpanel'){var t=document.getElementById(target.getAttribute('aria-labelledby'));if(t)selTab(t);target=document.getElementById('grille')||target}
+      jump(function(){target.scrollIntoView({block:'start'})});
+    }else{
+      jump(function(){window.scrollTo(0,0)});
+      if(!first){var h1=page.querySelector('h1');if(h1)h1.focus({preventScroll:true})}
+    }
+    first=false;
+  }
+  window.addEventListener('hashchange',route);
+  route();
+
+  // Copier un numéro ou l'e-mail
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.getAttribute('data-copy')),txt=el.textContent.trim();
+      function sel(){try{var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
+      try{navigator.clipboard.writeText(txt).then(function(){toast('Copié')},function(){sel();toast('Sélectionné, à copier')})}catch(e){sel();toast('Sélectionné, à copier')}
+    });
+  });
+
+  // Formulaire : message WhatsApp prêt à envoyer
+  var f=document.getElementById('devis'),send=document.getElementById('wa-send');
+  if(f&&send){
+    var build=function(){
+      var nom=f.nom.value.trim(),svc=f.service.value,d=f.date.value,msg=f.message.value.trim();
+      var lines=['Bonjour GM Impact Visuel,','Je souhaite un devis pour : '+svc+'.'];
+      if(nom)lines.push('Nom : '+nom);
+      if(d){var p=d.split('-');lines.push('Date souhaitée : '+p[2]+'/'+p[1]+'/'+p[0])}
+      if(msg)lines.push('Projet : '+msg);
+      send.href='https://wa.me/'+WA+'?text='+encodeURIComponent(lines.join('\n'));
+    };
+    f.addEventListener('input',build);f.addEventListener('change',build);
+    f.addEventListener('submit',function(e){e.preventDefault()});
+    build();
+  }
+
+  // Portfolio : filtres
+  var grid=document.getElementById('pf-grid');
+  var fbtns=[].slice.call(document.querySelectorAll('.filters [data-f]'));
+  var items=grid?[].slice.call(grid.querySelectorAll('.pf-item')):[];
+  fbtns.forEach(function(b){b.addEventListener('click',function(){
+    var v=b.getAttribute('data-f');
+    fbtns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    items.forEach(function(it){it.hidden=!(v==='all'||it.getAttribute('data-cat')===v)});
+  })});
+
+  // Portfolio : visionneuse
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),lbCount=document.getElementById('lb-count');
+  var list=[],idx=0,opener=null;
+  function show(i){
+    idx=(i+list.length)%list.length;var b=list[idx];
+    lbImg.src=b.getAttribute('data-full');lbImg.alt=b.querySelector('img').alt;
+    lbImg.style.background=b.getAttribute('data-logo')?(b.closest('.clair')?'#FFFFFF':'#1D1D21'):'transparent';
+    lbImg.style.padding=b.getAttribute('data-logo')?'32px':'0';
+    lbCap.textContent=b.getAttribute('data-cap');lbCount.textContent=(idx+1)+' / '+list.length;
+  }
+  function openLb(b){
+    list=items.filter(function(it){return !it.hidden}).map(function(it){return it.querySelector('.pf-open')});
+    opener=b;show(list.indexOf(b));
+    if(lb.showModal){lb.showModal()}else{lb.setAttribute('open','')}
+  }
+  function closeLb(){if(lb.close){lb.close()}else{lb.removeAttribute('open')}}
+  if(lb){
+    lb.addEventListener('close',function(){if(opener)opener.focus()});
+    items.forEach(function(it){var b=it.querySelector('.pf-open');b.addEventListener('click',function(){openLb(b)})});
+    document.getElementById('lb-close').addEventListener('click',closeLb);
+    document.getElementById('lb-prev').addEventListener('click',function(){show(idx-1)});
+    document.getElementById('lb-next').addEventListener('click',function(){show(idx+1)});
+    lb.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();show(idx+1)}else if(e.key==='ArrowLeft'){e.preventDefault();show(idx-1)}});
+    lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-fig'))closeLb()});
+    var sx=null;
+    lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+    lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(idx+(dx<0?1:-1));sx=null});
+  }
+})();
+</script>
+</body>
+</html>
